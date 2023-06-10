@@ -1,11 +1,23 @@
 @import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
 
+html {
+  height: 100%;
+  width: 100%;
+}
+.row {
+    --bs-gutter-x: 0;
+  }
 body {
+  height:100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: darkgrey;
   background: linear-gradient(to right, darkgrey, rgb(247, 243, 243))
 }
+
 .main-container {
     margin-top:50px;
+    width: auto;
 }
 .image-button {
     background: none;
@@ -14,8 +26,3 @@ body {
     cursor: pointer;
     outline: none; /* Agrega esta línea para eliminar el contorno de enfoque */
   }
-  
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
