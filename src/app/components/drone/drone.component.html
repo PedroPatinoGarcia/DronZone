@@ -1,0 +1,36 @@
+<h3>Lista de Drones:</h3>
+<div>
+  <div class="pagButtons" *ngIf="visibleDrone.length > 0">
+    <button class="btn btn-primary" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Anterior</button>
+    <button class="btn btn-primary" [disabled]="currentPage === totalPages" (click)="onPageChange(currentPage + 1)">Siguiente</button>
+  </div>
+  <table class="striped" *ngIf="drone.length > 0">
+    <thead>
+      <tr class="headers">
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha de Creación</th>
+        <th>Fecha de Finalización</th>
+        <th>Completada</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let droneItem of visibleDrone" class="droneList">
+        <td>{{ droneItem.name }}</td>
+        <td>{{ droneItem.text }}</td>
+        <td>{{ droneItem.creationDate}}</td>
+        <td>{{ droneItem.endingDate}}</td>
+        <td><input type="checkbox" [checked]="droneItem.completed" disabled></td>
+        <td><button class="btn btn-sm btn-primary" [routerLink]="['/details', droneItem.id]" [queryParams]="{ id: droneItem.id }">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="volver" *ngIf="drone.length > 0">
+    <a routerLink="/create">Crear</a>
+  </div>
+</div>
+<div class="optional" *ngIf="drone.length === 0">
+  <p>No hay drones en la base de datos, ¡crea algunos!</p>
+  <a routerLink="/create">Crear Dron</a>
+</div>

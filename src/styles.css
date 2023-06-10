@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
+
+body {
+  background-color: darkgrey;
+  background: linear-gradient(to right, darkgrey, rgb(247, 243, 243))
+}
+.main-container {
+    margin-top:50px;
+}
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none; /* Agrega esta línea para eliminar el contorno de enfoque */
+  }
+  
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
