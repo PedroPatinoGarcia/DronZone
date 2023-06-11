@@ -44,7 +44,8 @@ import { CoordenadasComponent } from './components/coordenadas/coordenadas.compo
     MatIconModule,
     CommonModule,
     ReactiveFormsModule,
-    TableModule
+    TableModule,
+    DataTablesModule
   ],
   providers: [
     LocalStorageService
