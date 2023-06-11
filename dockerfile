@@ -1,29 +1,19 @@
-# Establecer la imagen base
-FROM node:latest as build-stage
+#Primera Etapa
+FROM node:16-alpine as build-step
 
-# Establecer el directorio de trabajo dentro del contenedor
+RUN mkdir -p /app
+
 WORKDIR /app
 
-# Copiar los archivos de configuración y el archivo package.json
-COPY package*.json ./
+COPY package.json /app
 
-# Instalar las dependencias del proyecto
 RUN npm install
 
-# Copiar el código fuente de la aplicación al contenedor
-COPY . .
+COPY . /app
 
-# Construir la aplicación Angular
-RUN npm run build
+RUN npm run build --prod
 
-# Establecer la imagen base final para el entorno de producción
-FROM nginx:latest
-
-# Copiar los archivos de construcción de la aplicación Angular en la imagen de Nginx
-COPY --from=build-stage /app/dist/ /usr/share/nginx/html
-
-# Exponer el puerto en el que la aplicación Angular se ejecutará (generalmente el puerto 80)
-EXPOSE 80
-
-# Comando para iniciar Nginx y servir la aplicación Angular
-CMD ["nginx", "-g", "daemon off;"]
+#Segunda Etapa
+FROM nginx:1.17.1-alpine
+	#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
+COPY --from=build-step /app/dist/mapa-drones /usr/share/nginx/html
