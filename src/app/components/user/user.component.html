@@ -2,38 +2,40 @@
   <div class="row align-items-strecht">
     <div class="col bg d-none d-log-block col-md-5 col-lg-5 col-xl-6"></div>
     <div class="col p-5 rounded-end">
-      <div class="text-center">
-        <img src="assets/imagenes/Dronsito.png" width="250px" alt="250px" />
+      <div class="text-center bg-body">
+        <img src="assets/imagenes/dronzone.png" width="250px" alt="250px" />
+
+        <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+
+        <form action="#">
+          <div class="mb-4">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" name="email" />
+          </div>
+          <div class="mb-4"></div>
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" name="password" />
+          <div class="mb-4 form-check">
+            <input
+              type="checkbox"
+              name="connected"
+              class="form-check-input"
+              id=""
+            />
+            <label for="connected" class="form-check-label"
+              >Mantener la sesión iniciada</label
+            >
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+              Iniciar Sesión
+            </button>
+          </div>
+          <div class="my-3">
+            <span><a href="#">Recuperar Contraseña</a></span>
+          </div>
+        </form>
       </div>
-
-      <h2 class="fw-bold text-center py-5">Bienvenido</h2>
-
-      <form action="#">
-        <div class="mb-4">
-          <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" name="email" />
-        </div>
-        <div class="mb-4"></div>
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" name="password" />
-        <div class="mb-4 form-check">
-          <input
-            type="checkbox"
-            name="connected"
-            class="form-check-input"
-            id=""
-          />
-          <label for="connected" class="form-check-label"
-            >Mantener la sesión iniciada</label
-          >
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-        </div>
-        <div class="my-3">
-          <span><a href="#">Recuperar Contraseña</a></span>
-        </div>
-      </form>
     </div>
   </div>
 </div>

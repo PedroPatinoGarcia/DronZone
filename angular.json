@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["rxjs-compat, leaflet"],
             "outputPath": "dist/mapa-drones",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -55,6 +56,13 @@
             "development": {
               "buildOptimizer": false,
               "optimization": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2.00MB",
+                  "maximumError": "2.00MB"
+                }
+              ],
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
@@ -65,6 +73,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "your-application-name:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "MapaDrones:build:production"

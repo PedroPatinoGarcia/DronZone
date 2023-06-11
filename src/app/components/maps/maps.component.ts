@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { LeafletMouseEvent, Map, Marker, Point, divIcon, icon, marker, tileLayer } from 'leaflet';
+import { AfterViewInit, Component } from '@angular/core';
+import { LeafletMouseEvent, Map, icon, marker, tileLayer } from 'leaflet';
 import { LocalStorageService } from 'src/app/Service/localStorageService';
 
 interface Coordenada {
