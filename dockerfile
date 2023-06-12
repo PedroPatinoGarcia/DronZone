@@ -1,19 +1,21 @@
-#Primera Etapa
-FROM node:16-alpine as build-step
-
-RUN mkdir -p /app
+#for dev
+FROM node:16-alpine
 
 WORKDIR /app
-
-COPY package.json /app
-
+COPY package*.json ./
 RUN npm install
+COPY . .
+RUN npm run build
+CMD ["npm", "start"]
 
-COPY . /app
+#for prod
+# FROM node:16-alpine AS build
+# WORKDIR /app
 
-RUN npm run build --prod
-
-#Segunda Etapa
-FROM nginx:1.17.1-alpine
-	#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
-COPY --from=build-step /app/dist/mapa-drones /usr/share/nginx/html
+# COPY . .
+# RUN npm install
+# RUN npm run build
+# Serve Application using Nginx Server
+# FROM nginx:alpine
+# COPY --from=build /app/dist/dronzone/ /usr/share/nginx/html
+# EXPOSE 80

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MapaDrones": {
+    "DronZone": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": ["rxjs-compat, leaflet"],
-            "outputPath": "dist/mapa-drones",
+            "outputPath": "dist/dronzone",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -79,10 +79,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "MapaDrones:build:production"
+              "browserTarget": "DronZone:build:production"
             },
             "development": {
-              "browserTarget": "MapaDrones:build:development"
+              "browserTarget": "DronZone:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MapaDrones:build"
+            "browserTarget": "DronZone:build"
           }
         },
         "test": {

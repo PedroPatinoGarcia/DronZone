@@ -22,7 +22,7 @@ export class DroneComponent {
   }
 
   getDrone() {
-  this.http.get<any[]>('http://localhost:9000/api/listDron').subscribe(drone => {
+  this.http.get<any[]>('http://localhost:3000/api/listDron').subscribe(drone => {
     this.drone = drone.map(drone => {
       return drone;
     });
