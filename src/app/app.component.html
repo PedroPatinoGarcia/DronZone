@@ -33,7 +33,7 @@
             </li>
 
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link text-white" [routerLink]="'drone'">Drones</a>
+              <a class="nav-link text-white" [routerLink]="'tipoDron'">Listado</a>
             </li>
 
             <li class="nav-item" routerLinkActive="active">
@@ -63,6 +63,6 @@
   </div>
 </div>
 
-<div class="content" role="main" *ngIf="users$ | async as users">
-  <p *ngFor="let user of users">{{users?.name}}</p>
+<div class="content" role="main" *ngIf="logins$ | async as logins">
+  <p *ngFor="let login of logins">{{logins?.name}}</p>
 </div>
