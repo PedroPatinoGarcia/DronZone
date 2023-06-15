@@ -24,7 +24,7 @@ export class TipoDronComponent {
   getTipoDron() {
   this.http.get<any[]>('http://localhost:8080/api/tipoDron').subscribe(tipoDron => {
     this.tipoDron = tipoDron.map(tipoDron => {
-      return tipoDron;
+      return this.http.get('http://localhost:8080/api/tipoDron', { withCredentials: true });
     });
       });
   }

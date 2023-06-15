@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12">
-    <nav class="navbar navbar-expand-md navbar-light bg-black">
+    <nav class="navbar navbar-expand-md navbar-light bg-custom shadow-lg">
       <div class="container-fluid container text-center">
         <button
           class="image-button"
@@ -50,7 +50,7 @@
 
         <button
           class="image-button"
-          routerLink="user"
+          routerLink="login"
           routerLinkActive="active"
         >
           <img src="assets/imagenes/user.png" alt="user" height="50" />
@@ -63,6 +63,6 @@
   </div>
 </div>
 
-<div class="content" role="main" *ngIf="logins$ | async as logins">
-  <p *ngFor="let login of logins">{{logins?.name}}</p>
+<div class="content" role="main" *ngIf="users$ | async as users">
+  <p *ngFor="let user of users">{{users?.name}}</p>
 </div>

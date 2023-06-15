@@ -1,5 +1,33 @@
- <h1>Coordenadas</h1>
+<<tablemat-table [dataSource]="coordenadas"class="mat-elevation-z8">
 
-<section>
-    <app-table></app-table>
-</section>
+    <ng-containermatColumnDef="Id">
+       <thmat-header-cell *matHeaderCellDef> Id </th>
+       <tdmat-cell *matCellDef="let coordenadas">{{coordenadas.id}}</td>
+     </ng-container>
+
+     <ng-containermatColumnDef="latitud">
+       <thmat-header-cell *matHeaderCellDef> Latitud </th>
+       <tdmat-cell *matCellDef="let coordenadas">{{coordenadas.latitud}}</td>
+     </ng-container>
+
+     <ng-containermatColumnDef="longitud">
+       <thmat-header-cell *matHeaderCellDef> LOngitud </th>
+       <tdmat-cell *matCellDef="let coordenadas">{{coordenadas.longitud}}</td>
+     </ng-container>
+
+     <ng-containermatColumnDef="modelo">
+       <thmat-header-cell *matHeaderCellDef> Modelo </th>
+       <tdmat-cell *matCellDef="let coordenadas">{{coordenadas.modelo}}</td>
+     </ng-container>
+
+     <ng-containermatColumnDef="Actions">
+       <thmat-header-cell *matHeaderCellDef> Actions </th>
+       <tdmat-cell *matCellDef="let coordenadas"> 
+       <buttonmat-button >Borrar</button>    
+       </td>
+     </ng-container>
+
+     <trmat-header-row *matHeaderRowDef="displayedColumns"></tr>
+     <trmat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+>

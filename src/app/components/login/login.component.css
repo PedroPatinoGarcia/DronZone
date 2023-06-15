@@ -1,0 +1,31 @@
+ng::deep {
+
+.gradient-form {
+    background-color: blue;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+  }
+  
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slider-image:not(:first-child) {
+    opacity: 0;
+  }
+  
+  .slider-container:hover .slider-image:not(:hover) {
+    opacity: 0.5;
+  }
+}

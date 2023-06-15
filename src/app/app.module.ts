@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from "angular-datatables";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,9 +18,11 @@ import { MapsComponent } from './components/maps/maps.component';
 import { app_routing } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TipoDronComponent } from './components/tipoDron/tipoDron.component';
+import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/login/login.component';
 import { TableModule } from './modules/table/table.module';
 import { CoordenadasComponent } from './components/coordenadas/coordenadas.component';
+import { CorsInterceptor } from './cors.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { CoordenadasComponent } from './components/coordenadas/coordenadas.compo
     HomeComponent,
     MapsComponent,
     TipoDronComponent,
+    UserComponent,
     LoginComponent,
     CoordenadasComponent
   ],
@@ -48,6 +51,9 @@ import { CoordenadasComponent } from './components/coordenadas/coordenadas.compo
     DataTablesModule
   ],
   providers: [
+    {
+      provide: CorsInterceptor
+    },
   ],
   bootstrap: [AppComponent]
 })

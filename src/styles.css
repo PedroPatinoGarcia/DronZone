@@ -15,6 +15,11 @@ body {
   background: linear-gradient(to right, darkgrey, rgb(247, 243, 243))
 }
 
+
+.bg-custom {
+  background-color:black;
+}
+
 .main-container {
     margin-top:50px;
     width: auto;
@@ -26,6 +31,7 @@ body {
     cursor: pointer;
     outline: none; /* Agrega esta línea para eliminar el contorno de enfoque */
   }
+  
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

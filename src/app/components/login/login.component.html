@@ -1,68 +1,52 @@
-<div class="container w-75 mt-5">
-  <div class="row align-items-strecht">
-    <div class="col bg d-none d-log-block col-md-5 col-lg-5 col-xl-6"></div>
-    <div class="col p-5 rounded-end">
-      <div class="text-center bg-body">
-        <img src="assets/imagenes/dronzone.png" width="250px" alt="250px" />
+<!-- <section class="h-100 gradient-form" style="background-color: #eee;"> -->
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0 h-100 shadow-lg rounded" style="background: linear-gradient(to right, rgb(185, 180, 218), rgb(255, 255, 255));">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
 
-        <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+                <div class="text-center">
+                  <img src="assets/imagenes/dronzone.png"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Dinamic Solutions</h4>
+                </div>
 
-        <form action="#">
-          <div class="mb-4">
-            <label for="text" class="form-label">Identificador</label>
-            <input type="text" class="form-control" name="text" />
+                <form>
+                    <br>  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form2Example11" class="form-control"
+                      placeholder="Username" />
+                    <label class="form-label" for="form2Example11">Nombre de usuario</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example22" class="form-control" />
+                    <label class="form-label" for="form2Example22">Contraseña</label>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg shadow border-dark bg-black" type="button" (click)="getLogin()">Entrar</button>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <a class="text-muted" href="#!">¿Has olvidado la contraseña?</a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <img src="assets/imagenes/dron.png"
+                style="width: 460px;" alt="logo">
+              </div>
+            </div>
           </div>
-          <div class="mb-4"></div>
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" name="password" />
-          <div class="mb-4 form-check">
-            <input
-              type="checkbox"
-              name="connected"
-              class="form-check-input"
-              id=""
-            />
-            <label for="connected" class="form-check-label"
-              >Mantener la sesión iniciada</label
-            >
-          </div>
-          <div class="d-grid">
-            <button type="submit" class="btn btn-primary">
-              Iniciar Sesión
-            </button>
-          </div>
-          <div class="my-3">
-            <span><a href="#">Recuperar Contraseña</a></span>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container w-100 my-5">
-  <div class="row text-center">
-    <div class="col-12">Iniciar Sesión</div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <button class="btn btn-outline-primary w-100 my-1">
-        <div class="row align-items-center">
-          <div class="col-2 d-none d-md-block">
-            <img src="assets/imagenes/Facebook.png" width="32" />
-          </div>
-          <div class="col-12 col-md-10 text-center">Facebook</div>
-        </div>
-      </button>
-    </div>
-    <div class="col">
-      <button class="btn btn-outline-danger w-100 my-1">
-        <div class="row align-items-center">
-          <div class="col-2 d-none d-md-block">
-            <img src="assets/imagenes/Google.png" width="32" />
-          </div>
-          <div class="col-12 col-md-10 text-center">Google</div>
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
+<!-- </section> -->
