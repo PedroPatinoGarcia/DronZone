@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./coordenadas.component.css'],
 })
 export class CoordenadasComponent implements OnInit {
-  public coordenadas = Array<>();
+  coordenadas:any;
 
   public displayedColumns: string[] = ['id', 'latitud', 'longitud', 'modelo'];
   constructor(private http: HttpClient) {}
@@ -18,7 +18,7 @@ export class CoordenadasComponent implements OnInit {
 
   getCoordenadas() {
     this.http
-      .get<any[]>('http://localhost:8080/api/dron')
+      .get<any[]>('http://localhost:8081/api/dron')
       .subscribe((coordenadas) => {
         this.coordenadas = coordenadas.map((coordenadas) => {
           return coordenadas;

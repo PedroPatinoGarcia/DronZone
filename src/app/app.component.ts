@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tiposDronService } from './Service/tiposDron.service';
 import { CoordenadaService } from './Service/coordenada.service';
-import { UsersService } from './Service/users.service';
 import { LoginsService } from './Service/logins.service';
 
 @Component({  
@@ -15,10 +14,9 @@ export class AppComponent implements OnInit{
   public tiposDron$!:Observable<any>;
   public coordenada$!:Observable<any>;
   public logins$!:Observable<any>;
-  constructor(private usersServices: UsersService, private loginsServices: LoginsService, private tiposDronService: tiposDronService, private coordenadaService: CoordenadaService) {}
+  constructor( private loginsServices: LoginsService, private tiposDronService: tiposDronService, private coordenadaService: CoordenadaService) {}
 
   ngOnInit(){
-    this.users$ = this.usersServices.getUsers();
     this.tiposDron$ = this.tiposDronService.getTiposDron();
     this.coordenada$ = this.coordenadaService.getCoordenada();
     this.logins$ = this.loginsServices.getLogins();
