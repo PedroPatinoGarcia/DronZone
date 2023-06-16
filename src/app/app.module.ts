@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,8 +20,7 @@ import { app_routing } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TipoDronComponent } from './components/tipoDron/tipoDron.component';
 import { LoginComponent } from './components/login/login.component';
-import { TableModule } from './modules/table/table.module';
-import { CoordenadasComponent } from './components/coordenadas/coordenadas.component';
+import { CoordenadaComponent } from './components/coordenadas/coordenadas.component';
 import { CorsInterceptor } from './cors.interceptor';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { CorsInterceptor } from './cors.interceptor';
     MapsComponent,
     TipoDronComponent,
     LoginComponent,
-    CoordenadasComponent
+    CoordenadaComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,6 @@ import { CorsInterceptor } from './cors.interceptor';
     MatIconModule,
     CommonModule,
     ReactiveFormsModule,
-    TableModule,
     DataTablesModule
   ],
   providers: [

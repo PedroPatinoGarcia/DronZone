@@ -1,0 +1,26 @@
+.custom-header {
+    background-color: gray;
+    color: white;
+  }
+  
+  .custom-body {
+    background-color: pink;
+  }
+  
+  .header-cell {
+    font-size: 1.2em;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  td, th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  

@@ -15,6 +15,9 @@ body {
   background: linear-gradient(to right, darkgrey, rgb(247, 243, 243))
 }
 
+table {
+  width: 100%;  
+}
 
 .bg-custom {
   background-color:black;
