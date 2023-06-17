@@ -30,7 +30,7 @@ import { CorsInterceptor } from './cors.interceptor';
     MapsComponent,
     TipoDronComponent,
     LoginComponent,
-    CoordenadaComponent
+    CoordenadaComponent,
   ],
   imports: [
     BrowserModule,

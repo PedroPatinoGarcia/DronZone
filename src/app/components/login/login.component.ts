@@ -17,7 +17,7 @@ export class LoginComponent {
 
   ngOnInit() {
     this.getLogin();
-  }
+      }
 
   getLogin() {
   this.http.get<any[]>('http://localhost:8080/api/login').subscribe(login => {

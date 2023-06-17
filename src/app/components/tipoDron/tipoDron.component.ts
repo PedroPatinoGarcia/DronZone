@@ -1,42 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+interface TipoDron {
+  id: number;
+  fabricacion: string;
+  modelo: string;
+  potencia: number;
+  precio: number;
+}
 
 @Component({
   selector: 'app-tipoDron',
   templateUrl: './tipoDron.component.html',
   styleUrls: ['./tipoDron.component.css']
 })
-export class TipoDronComponent {
-  tipoDron: any[] = [];
-  visibleTipoDron: any[] = [];
-  currentPage: number = 1;
-  itemsPerPage: number = 5;
-  totalPages: number = 1;
-
-  constructor(
-    private http: HttpClient
-  ) {}
-
+export class TipoDronComponent implements OnInit {
+  TipoDron: TipoDron[] = [];
+  
+  constructor(private http: HttpClient) {}
+  
   ngOnInit() {
-    this.getTipoDron();
+    this.getTipoDronFromAPI();
   }
-
-  getTipoDron() {
-  this.http.get<any[]>('http://localhost:8080/api/tipoDron').subscribe(tipoDron => {
-    this.tipoDron = tipoDron.map(tipoDron => {
-      return this.http.get('http://localhost:8080/api/tipoDron', { withCredentials: true });
-    });
-      });
-  }
-
-  onPageChange(pageNumber: number) {
-    this.currentPage = pageNumber;
-    this.visibleTipoDron = this.getVisibleTipoDron();
-  }
-
-  getVisibleTipoDron() {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    return this.tipoDron.slice(startIndex, endIndex);
+  
+  getTipoDronFromAPI() {
+    this.http.get<TipoDron[]>('/api/tipodron').subscribe(
+      (data) => {
+        this.TipoDron = data;
+      },
+      (error) => {
+        console.error('Error al obtener los datos del API:', error);
+      }
+    );
   }
 }

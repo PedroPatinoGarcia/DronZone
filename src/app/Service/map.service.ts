@@ -9,6 +9,6 @@ export class MapService {
   constructor(private http: HttpClient) { }
 
   public getMap(){
-    return this.http.get('http://localhost:8080/api/dron');
+    return this.http.get('/api/dron');
   }
 }

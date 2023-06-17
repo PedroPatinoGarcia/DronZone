@@ -1,36 +1,20 @@
-<h3>Lista de Drones:</h3>
-<div>
-  <div class="pagButtons" *ngIf="visibleTipoDron.length > 0">
-    <button class="btn btn-primary" (click)="getTipoDron()">Anterior</button>
-    <button class="btn btn-primary" (click)="getTipoDron()">Siguiente</button>
-  </div>
-  <table class="striped" *ngIf="tipoDron.length > 0">
-    <thead>
-      <tr class="headers">
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Fecha de Creación</th>
-        <th>Fecha de Finalización</th>
-        <th>Completada</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tipoDronItem of visibleTipoDron" class="tipoDronList">
-        <td>{{ tipoDronItem.name }}</td>
-        <td>{{ tipoDronItem.text }}</td>
-        <td>{{ tipoDronItem.creationDate}}</td>
-        <td>{{ tipoDronItem.endingDate}}</td>
-        <td><input type="checkbox" [checked]="tipoDronItem.completed" disabled></td>
-        <td><button class="btn btn-sm btn-primary" [routerLink]="['/details', tipoDronItem.id]" [queryParams]="{ id: tipoDronItem.id }">Editar</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="volver" *ngIf="tipoDron.length > 0">
-    <a routerLink="/create">Crear</a>
-  </div>
-</div>
-<div class="optional" *ngIf="tipoDron.length === 0">
-  <p>No hay drones en la base de datos, ¡crea algunos!</p>
-  <a routerLink="/create">Crear Dron</a>
-</div>
+<table class="table">
+  <thead class="custom-header">
+    <tr>
+      <th class="header-cell">Identificador</th>
+      <th class="header-cell">Fabricacion</th>
+      <th class="header-cell">Modelo</th>
+      <th class="header-cell">Potencia</th>
+      <th class="header-cell">Precio</th>
+    </tr>
+  </thead>
+  <tbody class="custom-body">
+    <tr *ngFor="let row of TipoDron; let i = index">
+      <td>{{ row.id }}</td>
+      <td>{{ row.fabricacion }}</td>
+      <td>{{ row.modelo }}</td>
+      <td>{{ row.potencia }}</td>
+      <td>{{ row.precio }}</td>
+    </tr>
+  </tbody>
+</table>

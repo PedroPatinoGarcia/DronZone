@@ -13,7 +13,7 @@ const app_routes: Routes = [
     {path: 'login', component: LoginComponent },
     { path:'login/new', component: LoginComponent },
     { path:'login/delete/:id', component: LoginComponent },
-    {path: '**', pathMatch: 'full', redirectTo: 'home' },    
+    {path: '**', pathMatch: 'full', redirectTo: 'login' },    
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);
